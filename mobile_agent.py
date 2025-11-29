@@ -56,7 +56,7 @@ if start_btn and api_key and meeting:
     
     with st.status("🚀 Agent Working...", expanded=True) as status:
         
-        tools = [{"google_search": {}}]
+        tools = [{"google_search_retrieval": {}}]
 
         # 1. DEFINE THE OUTPUT SCHEMA (JSON)
         # We force the model to fill in this specific form
