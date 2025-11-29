@@ -65,7 +65,7 @@ if start_btn and api_key and meeting:
         )
 
         model = genai.GenerativeModel(
-            model_name='gemini-1.5-flash',
+            model_name='gemini-1.5-flash-001',
             tools=tools,
             generation_config=generation_config,
             system_instruction=f"""
