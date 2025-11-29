@@ -30,7 +30,12 @@ st.markdown("""
 # --- SIDEBAR ---
 with st.sidebar:
     st.header("⚡ Agent Settings")
-    api_key = st.text_input("Google API Key", type="password")
+    # Try to get key from Cloud Secrets first, otherwise ask user
+    if "GOOGLE_API_KEY" in st.secrets:
+        api_key = st.secrets["GOOGLE_API_KEY"]
+        st.success("API Key loaded from Cloud Secrets ☁️")
+    else:
+        api_key = st.text_input("Google API Key", type="password")
     
 # --- MAIN INPUTS ---
 st.title("🏇 Racing Agent")
